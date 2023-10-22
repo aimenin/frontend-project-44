@@ -1,17 +1,13 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
+import { constructQuestions, game, getRandomNumber } from '../src/index.js';
 
 const answers = ['yes', 'no'];
 
 // util functions
 const isEven = (number) => number % 2 === 0;
-const getRandomNumber = () => Math.floor(Math.random() * 101);
 
-const constructQuestions = () => {
-  const questions = Array.from([1, 2, 3], () => getRandomNumber());
-
-  return questions;
-};
+const fillQuestions = (questions) => questions.map(() => getRandomNumber(0, 100));
 
 const ask = (question) => {
   const answer = answers[readlineSync.keyInSelect(answers, `Question: ${question}`)];
@@ -29,20 +25,15 @@ const ask = (question) => {
   return false;
 };
 
-const startGame = () => {
-  const questions = constructQuestions();
-
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
+const evenGame = () => {
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  const questions = fillQuestions(constructQuestions());
   for (let i = 0; i < questions.length; i += 1) {
     if (!ask(questions[i])) {
-      console.log(`Let's try again, ${name}!`);
-      return;
+      return false;
     }
   }
-
-  console.log(`Congratulations, ${name}!`);
+  return true;
 };
 
-startGame();
+game(evenGame);
