@@ -9,3 +9,5 @@
 Ссылка на brain-even запись: https://asciinema.org/a/XKtdbyvFX2FCkOs6KWhdCGtJ9
 
 Ссылка на brain-calc запись: https://asciinema.org/a/z46ywYkknPDbXRJsH6SjunMG5
+
+Ссылка на brain-gcd запись: https://asciinema.org/a/uWD8uCpypYrUmUrWarAyvvSFl
