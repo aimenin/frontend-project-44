@@ -13,3 +13,5 @@
 Ссылка на brain-gcd запись: https://asciinema.org/a/uWD8uCpypYrUmUrWarAyvvSFl
 
 Ссылка на brain-progression запись: https://asciinema.org/a/vKsRZ9op4V12jYEVWYzBKxX4p
+
+Ссылка на brain-prime запись: https://asciinema.org/a/tz8N5NUIyp1cuJVm97YViJFeX

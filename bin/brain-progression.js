@@ -47,6 +47,7 @@ const progressionGame = () => {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${rightAnswer}.`);
       return false;
     }
+    console.log('Correct!');
   }
 
   return true;
