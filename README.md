@@ -1,3 +1,19 @@
+# Проект - тестовое задание для hexlet
+
+## Установка и запуск
+
+1. Установить модули make install
+2. Опубликовать модуль make publish
+3. Установить модуль к себе npm link
+
+Далее вы сможете использовать команды для игр:
+1. brain-games
+2. brain-even
+3. brain-calc
+4. brain-gcd
+5. brain-progression
+6. brain-prime 
+
 ### Hexlet tests and linter status:
 
 [![Actions Status](https://github.com/aimenin/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/aimenin/frontend-project-44/actions)
