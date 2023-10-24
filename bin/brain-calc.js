@@ -4,8 +4,6 @@ import safeEval from 'safe-eval';
 
 import { constructQuestions, game, getRandomNumber } from '../src/index.js';
 
-const emptyQuestions = constructQuestions();
-
 const equationSigns = ['+', '-', '*'];
 
 const constructQuestion = () => {
@@ -15,15 +13,13 @@ const constructQuestion = () => {
   return [firstOperand, equationSign, secondOperand];
 };
 
-const fillQuestions = () => emptyQuestions.map(() => constructQuestion());
-
 const constructQuestionString = (question) => `${question[0]} ${question[1]} ${question[2]} `;
 
 const askQuestion = (question) => readlineSync.question(`Question ${constructQuestionString(question)}`);
 
 const calcGame = () => {
   console.log('What is the result of the expression?');
-  const questions = fillQuestions();
+  const questions = constructQuestions(constructQuestion);
 
   for (let i = 0; i < questions.length; i += 1) {
     const question = questions[i];

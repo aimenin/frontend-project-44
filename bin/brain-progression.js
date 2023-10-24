@@ -3,8 +3,6 @@ import readlineSync from 'readline-sync';
 
 import { constructQuestions, game, getRandomNumber } from '../src/index.js';
 
-const emptyQuestions = constructQuestions();
-
 const generateArithmeticSequence = (length, commonDifference) => {
   const sequence = [];
 
@@ -24,21 +22,17 @@ const generateArithmeticSequence = (length, commonDifference) => {
   return { sequence, hiddenNumber };
 };
 
-const fillQuestions = () => {
-  const questions = emptyQuestions.map(() => {
-    const length = getRandomNumber(5, 10);
-    const commonDifference = getRandomNumber(5, 20);
-    return generateArithmeticSequence(length, commonDifference);
-  });
-
-  return questions;
+const constructQuestion = () => {
+  const length = getRandomNumber(5, 10);
+  const commonDifference = getRandomNumber(5, 20);
+  return generateArithmeticSequence(length, commonDifference);
 };
 
 const askQuestion = (question) => readlineSync.question(`Question: ${question.sequence} `);
 
 const progressionGame = () => {
   console.log('What number is missing in the progression?');
-  const questions = fillQuestions();
+  const questions = constructQuestions(constructQuestion);
 
   for (let i = 0; i < questions.length; i += 1) {
     const answer = askQuestion(questions[i]);

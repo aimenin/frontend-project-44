@@ -7,8 +7,6 @@ const answers = ['yes', 'no'];
 // util functions
 const isEven = (number) => number % 2 === 0;
 
-const fillQuestions = (questions) => questions.map(() => getRandomNumber(0, 100));
-
 const ask = (question) => {
   const answer = answers[readlineSync.keyInSelect(answers, `Question: ${question}`)];
 
@@ -27,7 +25,7 @@ const ask = (question) => {
 
 const evenGame = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  const questions = fillQuestions(constructQuestions());
+  const questions = constructQuestions(() => getRandomNumber(0, 100));
   for (let i = 0; i < questions.length; i += 1) {
     if (!ask(questions[i])) {
       return false;

@@ -10,8 +10,8 @@ export const getRandomNumber = (min, max) => {
   return result;
 };
 
-export const constructQuestions = () => {
-  const questions = Array.from({ length: 3 });
+export const constructQuestions = (mapFunction) => {
+  const questions = Array.from({ length: 3 }, mapFunction);
 
   return questions;
 };

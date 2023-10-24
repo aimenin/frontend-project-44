@@ -3,8 +3,6 @@ import readlineSync from 'readline-sync';
 
 import { constructQuestions, game, getRandomNumber } from '../src/index.js';
 
-const emptyQuestions = constructQuestions();
-
 const answers = ['yes', 'no'];
 
 function isPrime(number) {
@@ -29,21 +27,21 @@ function isPrime(number) {
   return true;
 }
 
-const fillQuestions = () => emptyQuestions.map(() => {
+const constructQuestion = () => {
   const question = getRandomNumber(0, 100);
 
   return {
     question,
     answer: isPrime(question),
   };
-});
+};
 
 const ask = (question) => answers[readlineSync.keyInSelect(answers, `Question: ${question.question}`)];
 
 const primeGame = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
 
-  const questions = fillQuestions();
+  const questions = constructQuestions(constructQuestion);
 
   for (let i = 0; i < questions.length; i += 1) {
     const question = questions[i];
