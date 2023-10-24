@@ -25,11 +25,13 @@ const generateArithmeticSequence = (length, commonDifference) => {
 };
 
 const fillQuestions = () => {
-  return emptyQuestions.map(() => {
+  const questions = emptyQuestions.map(() => {
     const length = getRandomNumber(5, 10);
     const commonDifference = getRandomNumber(5, 20);
     return generateArithmeticSequence(length, commonDifference);
   });
+
+  return questions;
 };
 
 const askQuestion = (question) => readlineSync.question(`Question: ${question.sequence} `);
