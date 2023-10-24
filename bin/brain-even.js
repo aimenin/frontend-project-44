@@ -1,13 +1,12 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-import { constructQuestions, game, getRandomNumber } from '../src/index.js';
-
-const answers = ['yes', 'no'];
+import {
+  answers, askYesNoQuesion, constructQuestions, game, getRandomNumber,
+} from '../src/index.js';
 
 const isEven = (number) => number % 2 === 0;
 
 const ask = (question) => {
-  const answer = answers[readlineSync.keyInSelect(answers, `Question: ${question}`)];
+  const answer = askYesNoQuesion(question);
 
   if (
     (isEven(question) && answer === 'yes') || (!isEven(question) && answer === 'no')

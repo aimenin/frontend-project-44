@@ -18,6 +18,10 @@ export const constructQuestions = (mapFunction) => {
 
 export const askQuestion = (question) => readlineSync.question(`Question ${question} `);
 
+export const answers = ['yes', 'no'];
+
+export const askYesNoQuesion = (question) => answers[readlineSync.keyInSelect(answers, `Question: ${question}`)];
+
 export const game = (gameFunction) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');

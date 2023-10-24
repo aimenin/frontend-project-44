@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-
-import { constructQuestions, game, getRandomNumber } from '../src/index.js';
+import {
+  askYesNoQuesion, constructQuestions, game, getRandomNumber,
+} from '../src/index.js';
 
 const answers = ['yes', 'no'];
 
@@ -36,8 +36,6 @@ const constructQuestion = () => {
   };
 };
 
-const ask = (question) => answers[readlineSync.keyInSelect(answers, `Question: ${question.question}`)];
-
 const primeGame = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
 
@@ -45,7 +43,7 @@ const primeGame = () => {
 
   for (let i = 0; i < questions.length; i += 1) {
     const question = questions[i];
-    const answer = ask(question);
+    const answer = askYesNoQuesion(question.question);
 
     if ((isPrime(question.question) && answer !== 'yes') || (!isPrime(question.question) && answer !== 'no')) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${answers[Number(answers[0] === answer)]}'.`);
