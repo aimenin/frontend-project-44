@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-
-import { constructQuestions, game, getRandomNumber } from '../src/index.js';
+import {
+  askQuestion, constructQuestions, game, getRandomNumber,
+} from '../src/index.js';
 
 const generateArithmeticSequence = (length, commonDifference) => {
   const sequence = [];
@@ -28,14 +28,12 @@ const constructQuestion = () => {
   return generateArithmeticSequence(length, commonDifference);
 };
 
-const askQuestion = (question) => readlineSync.question(`Question: ${question.sequence} `);
-
 const progressionGame = () => {
   console.log('What number is missing in the progression?');
   const questions = constructQuestions(constructQuestion);
 
   for (let i = 0; i < questions.length; i += 1) {
-    const answer = askQuestion(questions[i]);
+    const answer = askQuestion(questions[i].sequence);
 
     const rightAnswer = questions[i].hiddenNumber;
 

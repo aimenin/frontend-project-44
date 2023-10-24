@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
-
-import { constructQuestions, game, getRandomNumber } from '../src/index.js';
+import {
+  askQuestion, constructQuestions, game, getRandomNumber,
+} from '../src/index.js';
 
 const findGCD = (a, b) => {
   if (b === 0) {
@@ -21,14 +21,13 @@ const constructQuestion = () => {
   };
 };
 
-const askQuestion = (question) => readlineSync.question(`Question: ${question.firstOperand} ${question.secondOperand} `);
-
 const brainGcd = () => {
   console.log('Find the greatest common divisor of given numbers.');
   const questions = constructQuestions(constructQuestion);
 
   for (let i = 0; i < questions.length; i += 1) {
-    const answer = askQuestion(questions[i]);
+    const question = questions[i];
+    const answer = askQuestion(`${question.firstOperand} ${question.secondOperand}`);
 
     if (Number(answer) !== questions[i].answer) {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${questions[i].answer}.`);

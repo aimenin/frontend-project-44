@@ -1,8 +1,9 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
 import safeEval from 'safe-eval';
 
-import { constructQuestions, game, getRandomNumber } from '../src/index.js';
+import {
+  askQuestion, constructQuestions, game, getRandomNumber,
+} from '../src/index.js';
 
 const equationSigns = ['+', '-', '*'];
 
@@ -15,18 +16,15 @@ const constructQuestion = () => {
 
 const constructQuestionString = (question) => `${question[0]} ${question[1]} ${question[2]} `;
 
-const askQuestion = (question) => readlineSync.question(`Question ${constructQuestionString(question)}`);
-
 const calcGame = () => {
   console.log('What is the result of the expression?');
   const questions = constructQuestions(constructQuestion);
 
   for (let i = 0; i < questions.length; i += 1) {
     const question = questions[i];
-    const answer = askQuestion(question);
-    const rightAnswer = safeEval(constructQuestionString(question));
-    console.log(`Question ${constructQuestionString(question)}`);
-    console.log(`Your answer: ${answer}`);
+    const questionString = constructQuestionString(question);
+    const answer = askQuestion(questionString);
+    const rightAnswer = safeEval(questionString);
     if (Number(answer) !== rightAnswer) {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${rightAnswer}.`);
       return false;

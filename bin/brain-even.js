@@ -4,7 +4,6 @@ import { constructQuestions, game, getRandomNumber } from '../src/index.js';
 
 const answers = ['yes', 'no'];
 
-// util functions
 const isEven = (number) => number % 2 === 0;
 
 const ask = (question) => {
