@@ -2,15 +2,17 @@
 import safeEval from 'safe-eval';
 
 import {
+  BOTTOM_RANDOM_BORDER,
+  TOP_RANDOM_BORDER,
   askQuestion, constructQuestions, game, getRandomNumber,
 } from '../src/index.js';
 
 const equationSigns = ['+', '-', '*'];
 
 const constructQuestion = () => {
-  const firstOperand = getRandomNumber(0, 100);
-  const equationSign = equationSigns[getRandomNumber(0, 2)];
-  const secondOperand = getRandomNumber(0, 100);
+  const firstOperand = getRandomNumber(BOTTOM_RANDOM_BORDER, TOP_RANDOM_BORDER);
+  const equationSign = equationSigns[getRandomNumber(0, equationSigns.length - 1)];
+  const secondOperand = getRandomNumber(BOTTOM_RANDOM_BORDER, TOP_RANDOM_BORDER);
   return [firstOperand, equationSign, secondOperand];
 };
 

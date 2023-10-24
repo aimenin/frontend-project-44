@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 import {
+  BOTTOM_RANDOM_BORDER,
+  TOP_RANDOM_BORDER,
   askYesNoQuesion, constructQuestions, game, getRandomNumber,
 } from '../src/index.js';
 
@@ -28,7 +30,7 @@ function isPrime(number) {
 }
 
 const constructQuestion = () => {
-  const question = getRandomNumber(0, 100);
+  const question = getRandomNumber(BOTTOM_RANDOM_BORDER, TOP_RANDOM_BORDER);
 
   return {
     question,

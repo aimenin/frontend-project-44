@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 import {
+  BOTTOM_RANDOM_BORDER,
+  TOP_RANDOM_BORDER,
   answers, askYesNoQuesion, constructQuestions, game, getRandomNumber,
 } from '../src/index.js';
 
@@ -21,9 +23,11 @@ const ask = (question) => {
   return false;
 };
 
+const constructQuestion = () => getRandomNumber(BOTTOM_RANDOM_BORDER, TOP_RANDOM_BORDER);
+
 const evenGame = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  const questions = constructQuestions(() => getRandomNumber(0, 100));
+  const questions = constructQuestions(constructQuestion);
   for (let i = 0; i < questions.length; i += 1) {
     if (!ask(questions[i])) {
       return false;

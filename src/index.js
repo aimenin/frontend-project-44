@@ -1,5 +1,8 @@
 import readlineSync from 'readline-sync';
 
+export const BOTTOM_RANDOM_BORDER = 0;
+export const TOP_RANDOM_BORDER = 100;
+
 export const getRandomNumber = (min, max) => {
   const random = Math.random();
 

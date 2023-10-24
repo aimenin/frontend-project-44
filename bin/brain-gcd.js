@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 import {
+  BOTTOM_RANDOM_BORDER,
+  TOP_RANDOM_BORDER,
   askQuestion, constructQuestions, game, getRandomNumber,
 } from '../src/index.js';
 
@@ -11,8 +13,8 @@ const findGCD = (a, b) => {
 };
 
 const constructQuestion = () => {
-  const firstOperand = getRandomNumber(0, 100);
-  const secondOperand = getRandomNumber(0, 100);
+  const firstOperand = getRandomNumber(BOTTOM_RANDOM_BORDER, TOP_RANDOM_BORDER);
+  const secondOperand = getRandomNumber(BOTTOM_RANDOM_BORDER, TOP_RANDOM_BORDER);
   const answer = findGCD(firstOperand, secondOperand);
   return {
     firstOperand,

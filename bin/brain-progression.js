@@ -3,6 +3,11 @@ import {
   askQuestion, constructQuestions, game, getRandomNumber,
 } from '../src/index.js';
 
+const BOTTOM_RANDOW_LENGTH = 5;
+const TOP_RANDOM_LENGTH = 10;
+const BOTTOM_RANDOM_DEFFERENCE = 5;
+const TOP_RANDOM_DEFFERENCE = 20;
+
 const generateArithmeticSequence = (length, commonDifference) => {
   const sequence = [];
 
@@ -23,8 +28,8 @@ const generateArithmeticSequence = (length, commonDifference) => {
 };
 
 const constructQuestion = () => {
-  const length = getRandomNumber(5, 10);
-  const commonDifference = getRandomNumber(5, 20);
+  const length = getRandomNumber(BOTTOM_RANDOW_LENGTH, TOP_RANDOM_LENGTH);
+  const commonDifference = getRandomNumber(BOTTOM_RANDOM_DEFFERENCE, TOP_RANDOM_DEFFERENCE);
   return generateArithmeticSequence(length, commonDifference);
 };
 
