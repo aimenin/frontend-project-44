@@ -2,7 +2,8 @@
 import {
   BOTTOM_RANDOM_BORDER,
   TOP_RANDOM_BORDER,
-  askYesNoQuesion, constructQuestions, game, getRandomNumber,
+  askQuestion,
+  constructQuestions, game, getRandomNumber,
 } from '../src/index.js';
 
 const answers = ['yes', 'no'];
@@ -45,7 +46,7 @@ const primeGame = () => {
 
   for (let i = 0; i < questions.length; i += 1) {
     const question = questions[i];
-    const answer = askYesNoQuesion(question.question);
+    const answer = askQuestion(question.question);
 
     if ((isPrime(question.question) && answer !== 'yes') || (!isPrime(question.question) && answer !== 'no')) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${answers[Number(answers[0] === answer)]}'.`);

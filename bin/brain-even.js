@@ -2,13 +2,13 @@
 import {
   BOTTOM_RANDOM_BORDER,
   TOP_RANDOM_BORDER,
-  answers, askYesNoQuesion, constructQuestions, game, getRandomNumber,
+  answers, askQuestion, constructQuestions, game, getRandomNumber,
 } from '../src/index.js';
 
 const isEven = (number) => number % 2 === 0;
 
 const ask = (question) => {
-  const answer = askYesNoQuesion(question);
+  const answer = askQuestion(question);
 
   if (
     (isEven(question) && answer === 'yes') || (!isEven(question) && answer === 'no')
