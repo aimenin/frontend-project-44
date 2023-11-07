@@ -35,6 +35,7 @@ export const game = (gameFunction) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
+  if (gameFunction === undefined) return;
   if (!gameFunction()) {
     console.log(`Let's try again, ${name}!`);
     return;
