@@ -19,7 +19,7 @@ export const constructQuestions = (mapFunction) => {
   return questions;
 };
 
-export const askQuestion = (question) => readlineSync.question(`Question ${question}`);
+export const askQuestion = (question) => readlineSync.question(`Question: ${question}`);
 
 export const answers = ['yes', 'no'];
 
