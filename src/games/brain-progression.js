@@ -28,7 +28,7 @@ const generateArithmeticSequence = (length, commonDifference) => {
     }
   }
 
-  return { sequence, hiddenNumber };
+  return { sequence: sequence.join(' '), hiddenNumber };
 };
 
 const constructQuestion = () => {
