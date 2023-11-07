@@ -40,5 +40,5 @@ export const game = (gameFunction) => {
     console.log(`Let's try again, ${name}!`);
     return;
   }
-  console.log(`Congratulations, ${name}`);
+  console.log(`Congratulations, ${name}!`);
 };
