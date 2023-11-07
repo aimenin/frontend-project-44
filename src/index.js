@@ -27,7 +27,7 @@ export const askYesNoQuesion = (question) => answers[readlineSync.keyInSelect(an
 
 export const showCorrect = () => console.log('Correct!');
 
-export const showWrongAnswer = (answer, rightAnswer) => `'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`;
+export const showWrongAnswer = (answer, rightAnswer) => console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
 
 export const showQuestion = (question) => console.log(question);
 
